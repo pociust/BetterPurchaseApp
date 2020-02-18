@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Router>
-        <div>
+        <div className="frow row-around mt-15">
           <Link to="/">Home</Link>
           <Link to="/cart">My Cart</Link>
         </div>
