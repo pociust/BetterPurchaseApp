@@ -2,3 +2,17 @@
   height: 150px;
   width: 150px;
 }
+
+.nav-bar {
+  background-color: #232f34;
+  font-size: 20px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: #f9aa33
+}
