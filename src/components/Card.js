@@ -5,7 +5,7 @@ const Card = props => {
     <>
       <div className="shadow-dark p-15">
         <div>{props.name}</div>
-        <img src={props.image} alt="" />
+        <img src={props.image} className="card-image" alt="" />
         <div>{props.price}</div>
 
         <div>{props.url}</div>
