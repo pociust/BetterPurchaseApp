@@ -7,6 +7,9 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 function App() {
   return (
     <>
+    <div className="frow header pt-10">
+      Better Purcha<span>$</span>e APP
+    </div>
       <Router>
         <div className="frow row-around p-15 nav-bar">
           <Link to="/">Home</Link>

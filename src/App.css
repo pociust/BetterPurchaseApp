@@ -1,8 +1,12 @@
-.card-image {
-  height: 150px;
-  width: 150px;
+.header {
+  font-size: 40px;
+  color: white;
+  background-color: #232f34;
 }
 
+.header > span {
+  color: #f9aa33
+}
 .nav-bar {
   background-color: #232f34;
   font-size: 20px;
@@ -14,5 +18,10 @@
 }
 
 .nav-bar a:hover {
-  color: #f9aa33
+  color: #f9aa33;
+}
+
+.card-image {
+  height: 150px;
+  width: 150px;
 }
