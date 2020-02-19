@@ -19,20 +19,22 @@ const Home = () => {
     searchMovies(event.target.searchQuery.value);
   };
 
-
+  console.log(results);
   return (
     <>
       <div className="frow">hello Home</div>
       <Form submitform={handleInput}></Form>
-      {results.map(product => (
-        <Card
-          key={product.name}
-          name={product.name}
-          price={product.regularPrice}
-          url={product.url}
-        />
-      )
-      )}
+      <div className="frow-container row-around">
+        {results.map(product => (
+          <Card
+            key={product.upc}
+            name={product.name}
+            price={product.regularPrice}
+            url={product.url}
+            image={product.image}
+          />
+        ))}
+      </div>
     </>
   );
 };
