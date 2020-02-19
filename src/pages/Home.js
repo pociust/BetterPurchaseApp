@@ -21,9 +21,8 @@ const Home = () => {
 
   console.log(results);
   return (
-    <>
-      <div className="frow">hello Home</div>
-      <Form submitform={handleInput}></Form>
+    <div>
+      <Form className="" submitform={handleInput}></Form>
       <div className="frow row-around">
         {results.map(product => (
           <Card
@@ -35,7 +34,7 @@ const Home = () => {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
