@@ -24,7 +24,7 @@ const Home = () => {
     <>
       <div className="frow">hello Home</div>
       <Form submitform={handleInput}></Form>
-      <div className="frow-container row-around">
+      <div className="frow row-around">
         {results.map(product => (
           <Card
             key={product.upc}
