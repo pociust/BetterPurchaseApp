@@ -37,17 +37,16 @@ const Home = () => {
   };
 
   const addToCart = event => {
-    console.log(event);
+    console.log('eventcody', event);
     dispatch({
       type: 'addToCart',
-      cartName: event.name,
-      cartPrice: event.price,
-      cartURL: event.url,
-      cartImage: event.image
+      cartName: event.product.name,
+      cartPrice: event.product.price,
+      cartURL: event.product.url,
+      cartImage: event.product.image
     });
   };
 
-  console.log('result', results);
   console.log('cart', cart);
 
   return (
