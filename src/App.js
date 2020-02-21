@@ -24,10 +24,16 @@ function App() {
           image: action.cartImage
         }
       ];
+    } else if (action.type === 'deleteFromCart') {
+      return state.filter((item, index) => {
+        return item.id !== action.cartId;
+      });
     } else {
       return state;
     }
   }, []);
+
+  console.log(cart);
 
   const searchProducts = query => {
     API.search(query)
@@ -53,10 +59,12 @@ function App() {
   };
 
   const deleteFromCart = event => {
-    console.log('deleted');
+    dispatch({
+      type: 'deleteFromCart',
+      cartId: event.product.id
+    });
   };
 
-  console.log('cart', cart);
   return (
     <>
       <div className="frow header pt-10">

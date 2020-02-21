@@ -2,7 +2,6 @@ import React from 'react';
 import Card from '../components/Card';
 
 const Cart = props => {
-  console.log('cart props', props.cartProduct);
   return (
     <div>
       <div className="frow row-around">
@@ -14,11 +13,11 @@ const Cart = props => {
             url={product.url}
             image={product.image}
             button={'Remove from Cart'}
-            // onClick={() => {
-            //   props.onClick({
-            //     product
-            //   });
-            // }}
+            onClick={() => {
+              props.onClick({
+                product
+              });
+            }}
           />
         ))}
       </div>
