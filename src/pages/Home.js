@@ -21,7 +21,8 @@ const Home = () => {
 
   console.log(results);
   return (
-    <div>
+    <div className="content pt-5">
+
       <Form submitform={handleInput}></Form>
       <div className="frow row-around">
         {results.map(product => (

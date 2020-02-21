@@ -2,13 +2,16 @@ import React from 'react';
 
 const Card = props => {
   return (
-    <div className="shadow-dark col-md-1-3 p-15">
-      <div className="frow">{props.name}</div>
-      <img src={props.image} className="card-image" alt="" />
-      <div>${props.price}</div>
-
-      <div>{props.url}</div>
-      <button>Add to Cart</button>
+    <div className="col-md-1-3">
+      <div className="card-background m-15 p-5">
+        <div className="frow column-center">
+          {props.name}
+          <img src={props.image} className="card-image" alt="" />
+          <div className="price">${props.price}</div>
+          <div>{props.url}</div>
+          <button className="cart-button">Add to Cart</button>
+        </div>
+      </div>
     </div>
   );
 };
