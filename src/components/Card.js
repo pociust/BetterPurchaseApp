@@ -9,7 +9,7 @@ const Card = props => {
           <img src={props.image} className="card-image" alt="" />
           <div className="price">${props.price}</div>
           <div>{props.url}</div>
-          <button className="cart-button">Add to Cart</button>
+          <button onClick={props.onClick} className="cart-button">Add to Cart</button>
         </div>
       </div>
     </div>
