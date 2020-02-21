@@ -46,6 +46,7 @@ const Home = () => {
   };
 
   console.log('result', results);
+  console.log('cart', cart);
 
   return (
     <div className="content pt-5">
