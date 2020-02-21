@@ -20,7 +20,10 @@
 .nav-bar a:hover {
   color: #f9aa33;
 }
-
+ .input-form {
+   max-width: 150px;
+  border: 1px solid black
+ }
 .card-image {
   height: 150px;
   width: 150px;
