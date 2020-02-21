@@ -8,9 +8,9 @@ const MainHome = props => {
       <div className="content pt-5">
         <Form submitform={props.submitform}></Form>
         <div className="frow row-around">
-          {props.productResults.map(product => (
+          {props.productResults.map((product, index) => (
             <Card
-              key={product.upc}
+              key={`${index}-${product.upc}`}
               name={product.name}
               price={product.regularPrice}
               url={product.url}

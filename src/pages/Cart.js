@@ -5,9 +5,9 @@ const Cart = props => {
   return (
     <div>
       <div className="frow row-around">
-        {props.cartProducts.map(product => (
+        {props.cartProducts.map((product, index) => (
           <Card
-            key={product.upc}
+            key={`${index}-${product.upc}`}
             name={product.name}
             price={product.price}
             url={product.url}
