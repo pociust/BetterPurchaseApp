@@ -1,7 +1,8 @@
 import React, { useState, useReducer } from 'react';
 import API from '../utils/API';
-import Form from '../components/Form';
-import Card from '../components/Card';
+// import Form from '../components/Form';
+// import Card from '../components/Card';
+import MainHome from './MainHome';
 
 const Home = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -36,6 +37,7 @@ const Home = () => {
   };
 
   const addToCart = event => {
+    console.log(event);
     dispatch({
       type: 'addToCart',
       cartName: event.name,
@@ -49,28 +51,12 @@ const Home = () => {
   console.log('cart', cart);
 
   return (
-    <div className="content pt-5">
-      <Form submitform={handleInput}></Form>
-      <div className="frow row-around">
-        {results.map(product => (
-          <Card
-            key={product.upc}
-            name={product.name}
-            price={product.regularPrice}
-            url={product.url}
-            image={product.image}
-            onClick={() => {
-              addToCart({
-                key: product.upc,
-                name: product.name,
-                price: product.regularPrice,
-                url: product.url,
-                image: product.image
-              });
-            }}
-          />
-        ))}
-      </div>
+    <div>
+      <MainHome
+        submitform={handleInput}
+        productResults={results}
+        onClick={addToCart}
+      ></MainHome>
     </div>
   );
 };
