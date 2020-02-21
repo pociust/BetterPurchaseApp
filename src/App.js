@@ -17,6 +17,7 @@ function App() {
       return [
         ...state,
         {
+          id: action.cartId,
           name: action.cartName,
           price: action.cartPrice,
           url: action.cartURL,
@@ -43,8 +44,9 @@ function App() {
   const addToCart = event => {
     dispatch({
       type: 'addToCart',
+      cartId: event.product.upc,
       cartName: event.product.name,
-      cartPrice: event.product.price,
+      cartPrice: event.product.regularPrice,
       cartURL: event.product.url,
       cartImage: event.product.image
     });
@@ -71,7 +73,7 @@ function App() {
             ></Home>
           </Route>
           <Route exact path="/cart">
-            <Cart cartProduct={cart}></Cart>
+            <Cart cartProducts={cart}></Cart>
           </Route>
         </Switch>
       </Router>
