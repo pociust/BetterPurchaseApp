@@ -20,6 +20,7 @@ const MainHome = props => {
                   product
                 });
               }}
+              button={'Add to Cart'}
             />
           ))}
         </div>

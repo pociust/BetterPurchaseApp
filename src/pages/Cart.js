@@ -13,6 +13,7 @@ const Cart = props => {
             price={product.price}
             url={product.url}
             image={product.image}
+            button={'Remove from Cart'}
             // onClick={() => {
             //   props.onClick({
             //     product

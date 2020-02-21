@@ -52,6 +52,10 @@ function App() {
     });
   };
 
+  const deleteFromCart = event => {
+    console.log('deleted');
+  };
+
   console.log('cart', cart);
   return (
     <>
@@ -73,7 +77,7 @@ function App() {
             ></Home>
           </Route>
           <Route exact path="/cart">
-            <Cart cartProducts={cart}></Cart>
+            <Cart cartProducts={cart} onClick={deleteFromCart}></Cart>
           </Route>
         </Switch>
       </Router>
