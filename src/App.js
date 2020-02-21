@@ -1,10 +1,56 @@
-import React from 'react';
+import React, { useState, useReducer } from 'react';
+import API from './utils/API';
+// import Form from '../components/Form';
+// import Card from '../components/Card';
+import MainHome from './pages/MainHome';
+import Cart from './pages/Cart'
 import './App.css';
-import Home from './pages/Home';
-import Cart from './pages/Cart';
+// import Home from './pages/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [cart, dispatch] = useReducer((state, action) => {
+    console.log(action);
+    if (action.type === 'addToCart') {
+      return [
+        ...state,
+        {
+          name: action.cartName,
+          price: action.cartPrice,
+          url: action.cartURL,
+          image: action.cartImage
+        }
+      ];
+    } else {
+      return state;
+    }
+  }, []);
+
+  const searchProducts = query => {
+    API.search(query)
+      .then(res => setResults(res.data.products))
+      .catch(err => console.log(err));
+  };
+
+  const handleInput = event => {
+    event.preventDefault();
+    setSearchQuery(event.target.searchQuery.value);
+    searchProducts(event.target.searchQuery.value);
+  };
+
+  const addToCart = event => {
+    dispatch({
+      type: 'addToCart',
+      cartName: event.product.name,
+      cartPrice: event.product.price,
+      cartURL: event.product.url,
+      cartImage: event.product.image
+    });
+  };
+
+  console.log('cart', cart);
   return (
     <>
     <div className="frow header pt-10">
@@ -18,7 +64,9 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <MainHome submitform={handleInput}
+        productResults={results}
+        onClick={addToCart}></MainHome>
           </Route>
           <Route exact path="/cart">
             <Cart></Cart>
