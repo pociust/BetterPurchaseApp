@@ -2,8 +2,8 @@ import React, { useState, useReducer } from 'react';
 import API from './utils/API';
 // import Form from '../components/Form';
 // import Card from '../components/Card';
-import MainHome from './pages/MainHome';
-import Cart from './pages/Cart'
+import Home from './pages/Home';
+import Cart from './pages/Cart';
 import './App.css';
 // import Home from './pages/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
@@ -53,9 +53,9 @@ function App() {
   console.log('cart', cart);
   return (
     <>
-    <div className="frow header pt-10">
-      Better Purcha<span>$</span>e APP
-    </div>
+      <div className="frow header pt-10">
+        Better Purcha<span>$</span>e APP
+      </div>
       <Router>
         <div className="frow row-around p-15 nav-bar">
           <Link to="/">Home</Link>
@@ -64,12 +64,14 @@ function App() {
 
         <Switch>
           <Route exact path="/">
-            <MainHome submitform={handleInput}
-        productResults={results}
-        onClick={addToCart}></MainHome>
+            <Home
+              submitform={handleInput}
+              productResults={results}
+              onClick={addToCart}
+            ></Home>
           </Route>
           <Route exact path="/cart">
-            <Cart></Cart>
+            <Cart cartProduct={cart}></Cart>
           </Route>
         </Switch>
       </Router>
