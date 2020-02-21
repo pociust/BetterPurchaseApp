@@ -22,7 +22,7 @@ const Home = () => {
   console.log(results);
   return (
     <div>
-      <Form className="" submitform={handleInput}></Form>
+      <Form submitform={handleInput}></Form>
       <div className="frow row-around">
         {results.map(product => (
           <Card
