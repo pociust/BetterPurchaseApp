@@ -1,4 +1,51 @@
+.header {
+  font-size: 40px;
+  color: white;
+  background-color: #232f34;
+}
+
+.header > span {
+  color: #f9aa33;
+}
+.nav-bar {
+  background-color: #232f34;
+  font-size: 20px;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-bar a:hover {
+  color: #f9aa33;
+}
+
+.content {
+  background-color: #cbdbe3;
+  min-height: 100vh;
+}
+.input-form {
+  max-width: 150px;
+  border: 1px solid black;
+  background-color: white;
+}
+
 .card-image {
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
+}
+
+.card-background {
+  background-color: white;
+  border-radius: 30px;
+}
+
+.price::first-letter {
+  color: #f9aa33;
+}
+
+button:hover {
+  background-color: #f9aa33;
+  border-color: #f9aa33;
 }
