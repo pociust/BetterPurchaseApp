@@ -1,11 +1,9 @@
 import React, { useState, useReducer } from 'react';
 import API from './utils/API';
-// import Form from '../components/Form';
-// import Card from '../components/Card';
+
 import Home from './pages/Home';
 import Cart from './pages/Cart';
 import './App.css';
-// import Home from './pages/Home';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function App() {
@@ -50,7 +48,7 @@ function App() {
   const addToCart = event => {
     dispatch({
       type: 'addToCart',
-      cartId: event.product.upc,
+      cartId: (event.product.upc + cart.length),
       cartName: event.product.name,
       cartPrice: event.product.regularPrice,
       cartURL: event.product.url,
