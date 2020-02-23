@@ -10,7 +10,6 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState([]);
   const [cart, dispatch] = useReducer((state, action) => {
-    console.log(action);
     if (action.type === 'addToCart') {
       return [
         ...state,
@@ -31,8 +30,6 @@ function App() {
     }
   }, []);
 
-  console.log(cart);
-
   const searchProducts = query => {
     API.search(query)
       .then(res => setResults(res.data.products))
@@ -48,7 +45,7 @@ function App() {
   const addToCart = event => {
     dispatch({
       type: 'addToCart',
-      cartId: (event.product.upc + cart.length),
+      cartId: event.product.upc + cart.length,
       cartName: event.product.name,
       cartPrice: event.product.regularPrice,
       cartURL: event.product.url,
