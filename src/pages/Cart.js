@@ -3,7 +3,7 @@ import Card from '../components/Card';
 
 const Cart = props => {
   return (
-    <div>
+    <div className="content">
       <div className="frow row-around">
         {props.cartProducts.map((product, index) => (
           <Card
